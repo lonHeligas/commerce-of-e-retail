@@ -4,20 +4,20 @@ const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
-// Products belongsTo Category
+// ? Products belongsTo Category
 Product.belongsTo(Category);
 
-// Categories have many Products
+// ? Categories have many Products
 Category.hasMany(Product);
 
-// Products belongToMany Tags (through ProductTag)
+// ? Products belongToMany Tags (through ProductTag)
 Product.belongToMany(Tag, {
   through: {
     model: ProductTag,
     unique: false,
   }
 });
-// Tags belongToMany Products (through ProductTag)
+// ? Tags belongToMany Products (through ProductTag)
 Tag.belongToMany(Product, {
   through: {
     model: ProductTag,
