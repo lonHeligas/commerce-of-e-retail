@@ -72,7 +72,7 @@ router.delete('/:id', async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(400).json(error);
-  }// delete on tag by its `id` value
+  }// * delete on tag by its `id` value
 });
 
 module.exports = router;
