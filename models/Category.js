@@ -11,8 +11,7 @@ Category.init(
       allowNull: false,
       autoIncrement: true,
     },
-  
-  
+    
     category_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,5 +26,5 @@ Category.init(
     modelName: 'category',
   }
 );
-
+Category.destwoy = Category.destroy
 module.exports = Category;

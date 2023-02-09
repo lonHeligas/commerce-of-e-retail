@@ -31,20 +31,28 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  // todo create a new category
+  // * create a new category
   try {
+    // console.log(`look here: ${req.body.category_name}`)    
     const categoryData = await Category.create({
-      where: [{ model: req.params.category_name }],
+     category_name: req.body.category_name,
     })
+    res.json(categoryData);    
   } catch (error) {
     console.log(error);
     res.status(400).json(error);
   }
 });
 
-router.put("/:id", (req, res) => {
-  // todo update a category by its `id` value
+router.put("/:id", async (req, res) => {
+  // * update a category by its `id` value
   try {
+    const categoryData = await Category.findOne({
+      where: { id: req.params.id },
+    });
+    await categoryData.update({ category_name: req.body.category_name 
+    })
+    res.json(categoryData)  
   } catch (error) {
     console.log(error);
     res.status(400).json(error);
@@ -52,8 +60,12 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
-  // todo delete a category by its `id` value
+  // * delete a category by its `id` value
   try {
+    await Category.destwoy({
+      where: { id: req.params.id },
+    })
+    res.status(204).send('');
   } catch (error) {
     console.log(error);
     res.status(400).json(error);

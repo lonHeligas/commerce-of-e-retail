@@ -36,16 +36,35 @@ router.get('/:id', async (req, res) => {
   // * be sure to include its associated Product data
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+  try {
+
+
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
   // create a new tag
 });
 
-router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+router.put('/:id', async (req, res) => {
+  try {
+
+
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }// update a tag's name by its `id` value
 });
 
-router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+router.delete('/:id', async (req, res) => {
+  try {
+
+    
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }// delete on tag by its `id` value
 });
 
 module.exports = router;
