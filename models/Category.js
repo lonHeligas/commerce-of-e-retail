@@ -24,5 +24,5 @@ Category.init(
     modelName: 'category',
   }
 );
-Category.destwoy = Category.destroy
+// Category.destwoy = Category.destroy
 module.exports = Category;
